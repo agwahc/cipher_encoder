@@ -69,7 +69,7 @@ class gray:
 
     def access(self):
         print(self.sum)
-'''
+
 
 def scramble():
     j = open('work1.txt', 'r')
@@ -101,3 +101,4 @@ def lens():
     print(x)
 if True:
     lens()
+'''

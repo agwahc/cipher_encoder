@@ -2,6 +2,8 @@ from cipherz import recover
 from cipherz import iterate as it
 import dir
 from datetime import datetime
+from pyzbar.pyzbar import decode
+from PIL import Image
 # This file will read inputted data, extract individual words from rand_tmp.txt, replace them with their preceding
 # counterparts, and produce an encoded output.
 msg = {'Date/time': ' ', 'Actual_msg': ' ', 'Encoded_msg': ' '}
@@ -18,6 +20,8 @@ def data():  # reads data *ignores punctuations and ints
         g = open('Encoded_msg.txt', 'a')
         msg['Date/time'] = datetime.now().strftime('%d/%m/%Y %H:%M')
         msg['Actual_msg'] = a
+        # b = decode(Image.open(dir.fill_tmp_png()))
+        # msg['Encoded_msg'] = b[0].data.decode('ascii')
         access1 = dir.fill_tmp()
         msg['Encoded_msg'] = open(access1, 'r').read()
         g.write(str(msg))
